@@ -18,7 +18,7 @@ class TcpFlow(Thread):
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         self.gen = self.Generator(self.process)
 
-    def __enter__(self) -> object:
+    def __enter__(self) -> 'TcpFlow':
         self.start()
         return self
 
